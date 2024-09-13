@@ -13,6 +13,7 @@ class filewrite():
 
   def write(self,array):
     import tstamp
+    import time
     leng=len(array)
     temps=""
     for i in range(0,leng-1):
@@ -22,7 +23,7 @@ class filewrite():
     if ttime<0.001:
       ttime=0.0
     ttime=round(ttime,5)
-    f.write(tstamp.timestamp()+","+str(ttime)+","+str(temps)+'\n')
+    self.f.write(tstamp.timestamp()+","+str(ttime)+","+str(temps)+'\n')
   
-  def close(self)
+  def close(self):
     self.f.close() 

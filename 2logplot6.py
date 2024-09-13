@@ -8,7 +8,7 @@ from mplot_class import mplot
 import tstamp
 import nowtime
 from read2m5_class import read2m5
-from fwrite_class impot filewrite
+from fwrite_class import filewrite
 
 fl=open("2log_log.txt",'a',encoding="utf-8")
 s1=tstamp.timestamp()+": read2log.py started\n"
@@ -26,9 +26,11 @@ start = time.time()
 read2log=read2m5()
 #
 fwrite=filewrite()
+read2log=read2m5()
 while True:
   is_file = os.path.isfile(path) # check flag file
   if is_file: # file was found
+    array=read2log.reads()
     fwrite.write(array)
 # plot
     splot.plot(array)
